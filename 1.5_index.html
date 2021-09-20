@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Note the CSS framework is from https://tachyons.io/ -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    />
+  </head>
+
+  <body>
+    <main class="mw6 center" id="main"></main>
+
+    <script>
+      const heroes = [
+        {
+          name: 'Prof. Xavier',
+          twitter: '@profx',
+          pic: 'http://www.animatedimages.org/data/media/450/animated-marvel-avatar-image-0004.gif',
+        },
+        {
+          name: 'Spiderman',
+          twitter: '@spidey',
+          pic: 'http://www.animatedimages.org/data/media/450/animated-marvel-avatar-image-0008.gif',
+        },
+        {
+          name: 'Wolverine',
+          pic: 'http://www.animatedimages.org/data/media/450/animated-marvel-avatar-image-0011.gif',
+          twitter: '@logan',
+        },
+      ];
+
+      const main = document.querySelector('#main');
+
+      heroes.map((hero) => {
+        return (main.innerHTML += `
+        <article class='dt w-100 bb b--black-05 pb2 mt2' href='#0'>
+            <div class='dtc w2 w3-ns v-mid'>
+              <img
+                src=${(hero.pic = null ?? hero.pic)}
+                class='ba b--black-10 db br-100 w2 w3-ns h2 h3-ns'
+              />
+            </div>
+            <div class='dtc v-mid pl3'>
+              <h1 class='f6 f5-ns fw6 lh-title black mv0'>${(hero.name =
+                null ?? hero.name)}</h1>
+              <h2 class='f6 fw4 mt0 mb0 black-60'>${(hero.twitter =
+                null ?? hero.twitter)}</h2>
+            </div>
+            <div class='dtc v-mid'>
+              <form class='w-100 tr'>
+                <button
+                  class='
+                f6
+                button-reset
+                bg-white
+                ba
+                b--black-10
+                dim
+                pointer
+                pv1
+                black-60
+              '
+                  type='submit'
+                >
+                  + Follow
+                </button>
+              </form>
+            </div>
+          </article>
+        `);
+      });
+    </script>
+  </body>
+</html>
