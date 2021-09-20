@@ -77,7 +77,6 @@ data.map((item) => {
 // Question 2:
 //Clicking the 'Compose' button will display a new email at the top of the inbox (showing your name, your github's avatar, a random subject line, and a sentence of whatever).
 // Github API https://api.github.com/users/felix-le
-
 const newEmail = {
   avatar: '"https://avatars.githubusercontent.com/u/5135436?v=4"',
   name: 'Felix Le',
@@ -94,4 +93,4 @@ function handleCompose(e) {
 }
 
 const btnCompose = document.querySelector('.pure-button');
-btnCompose.addEventListener('click', handleCompose);
+btnCompose.addEventListener('click', doSomething);
