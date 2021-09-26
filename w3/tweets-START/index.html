@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+      .emoji {
+        height: 25px;
+      }
+      .collection-item {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .collection-item img {
+        width: 20px !important;
+        height: 20px !important;
+      }
+      section#browsegifs {
+        width: 600px;
+      }
+      .modal .modal-content {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">What's happening?</label>
+            </div>
+          </div>
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal" style="max-width: 400px">
+            <div
+              class="modal-header"
+              style="
+                padding: 7px;
+                margin: 3px;
+              "
+            >
+            <ul class="collection">
+              <li class="collection-item" style="display: flex; justify-content: space-around">
+                <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f600.svg"
+                alt="smiley" 
+                data-category="smiley"
+                class="emoji"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f43b.svg"
+                alt="animals"
+                class="emoji"
+                data-category="animals"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f354.svg"
+                alt="food"
+                class="emoji"
+                data-category="food"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/26bd.svg"
+                alt="activities"
+                class="emoji"
+                data-category="activities"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f698.svg"
+                alt="travel"
+                class="emoji"
+                data-category="travel"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f4a1.svg"
+                alt="objects"
+                class="emoji"
+                data-category="objects"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f523.svg"
+                alt="symbols"
+                class="emoji"
+                data-category="symbols"
+              />
+              <img
+                src="https://abs-0.twimg.com/emoji/v2/svg/1f6a9.svg"
+                alt="flags"
+                class="emoji"
+                data-category="flags"
+              />
+              </li>
+            </ul>
+
+            </div>
+            <div class="modal-content" style="min-height: 170px">
+              <!-- emojis go here -->
+            </div>
+              <a href="#!" class="right modal-close waves-effect waves-green btn-flat"
+                >Close</a
+              >
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <button class="col s1 btn offset-s3">
+                <i class="material-icons">image</i>
+              </button>
+              <button class="col s1 btn">
+                <i class="material-icons">gif</i>
+              </button>
+              <button class="col s1 btn">
+                <i class="material-icons">insert_chart</i>
+              </button>
+              <button id="emoji-btn" class="col s1 btn modal-trigger" data-target="modal1">
+                <i class="material-icons">insert_emoticon</i>
+              </button>
+              <button class="col s1 btn">
+                <i class="material-icons">schedule</i>
+              </button>
+              <a id="tweetbtn" class="waves-effect waves-light btn col s1"
+                >Tweet</a
+              >
+            </div>
+          </div>
+        </div>
+        <div id="feed" class="col s6 offset-s3"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".modal");
+        var instances = M.Modal.init(elems);
+      });
+    </script>
+    <script src="index.js"></script>
+    <script src="emoji.js"></script>
+    
+  </body>
+</html>
