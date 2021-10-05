@@ -16,8 +16,9 @@ function tweetNew() {
 }
 
 function render() {
-  feed.innerHTML = tweets.map(
-    (tweet) => `<div class="card horizontal">
+  feed.innerHTML = tweets
+    .map(
+      (tweet, i) => `<div class="card horizontal" data-tweet="${i}>
   <div class="card-image">
     <img
       src=${tweet.avatar}
@@ -31,7 +32,8 @@ function render() {
     </div>
   </div>
 </div>`
-  );
+    )
+    .join('');
 }
 
 tweetbtn.addEventListener('click', tweetNew);

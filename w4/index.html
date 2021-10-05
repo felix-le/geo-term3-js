@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <style>
+      .card {
+        max-width: 340px;
+        margin: 7px;
+        overflow: hidden;
+        padding-bottom: 10px;
+      }
+
+      .card img {
+        height: 340px;
+        width: 340px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar has-background-light"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div id="navbarBasicExample" class="navbar-menu">
+        <h1 class="title">Recipes</h1>
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <div class="buttons" id="categories">
+              <a href="/" class="button is-success"> Home </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section" id="sectionMealList">
+      <div class="container">
+        <div class="columns">
+          <main
+            class="column"
+            style="display: flex; flex-wrap: wrap; justify-content: center"
+            id="main"
+          ></main>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          This project uses
+          <a href="https://www.themealdb.com/api.php">Meal DB API</a>
+          to find recipes.
+        </p>
+        <p>&copy;2020</p>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
