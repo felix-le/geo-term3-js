@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .collection-item {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .collection-item img {
+        width: 20px !important;
+        height: 20px !important;
+      }
+      section#browsegifs {
+        width: 600px;
+      }
+      .modal .modal-content {
+        overflow: hidden;
+      }
+    </style>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">What's happening?</label>
+            </div>
+          </div>
+          <div class="row" id="imgGifPoll"></div>
+
+          <!-- Emoji Modal -->
+          <div id="emojimodal" class="modal" style="max-width: 400px">
+            <ul class="collection">
+              <li class="collection-item">
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f600.svg"
+                  alt=""
+                  data-category="smiley"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f43b.svg"
+                  alt=""
+                  data-category="animals"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f354.svg"
+                  alt=""
+                  data-category="food"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/26bd.svg"
+                  alt=""
+                  data-category="activities"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f698.svg"
+                  alt=""
+                  data-category="travel"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f4a1.svg"
+                  alt=""
+                  data-category="objects"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f523.svg"
+                  alt=""
+                  data-category="symbols"
+                />
+                <img
+                  src="https://abs-0.twimg.com/emoji/v2/svg/1f6a9.svg"
+                  alt=""
+                  data-category="flags"
+                />
+              </li>
+            </ul>
+            <div class="modal-content"></div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+                >Close</a
+              >
+            </div>
+          </div>
+          <!-- end Emoji Modal -->
+
+          <!-- start gifs modal -->
+          <div id="gifsmodal" class="modal col s4 offset-s2">
+            <div class="modal-content">
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">search</i>
+                      <input id="keyword" type="text" class="validate" />
+                      <label for="keyword">Search gifs</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field switch s12">
+                      <label>
+                        Off
+                        <input type="checkbox" id="switchGif" />
+                        <span class="lever"></span>
+                        Auto-play gifs
+                      </label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <hr />
+              <div id="browsegifs"></div>
+            </div>
+          </div>
+          <!-- end gifs modal -->
+
+          <div class="row">
+            <div>
+              <button class="col s1 btn offset-s3">
+                <i class="material-icons">image</i>
+              </button>
+              <button class="col s1 btn modal-trigger" data-target="gifsmodal">
+                <i class="material-icons">gif</i>
+              </button>
+              <button class="col s1 btn" id="poll-btn">
+                <i class="material-icons">insert_chart</i>
+              </button>
+              <button
+                id="emoji-btn"
+                class="col s1 btn modal-trigger"
+                data-target="emojimodal"
+              >
+                <i class="material-icons">insert_emoticon</i>
+              </button>
+              <button class="col s1 btn">
+                <i class="material-icons">schedule</i>
+              </button>
+              <a id="tweetbtn" class="waves-effect waves-light btn col s1"
+                >Tweet</a
+              >
+            </div>
+          </div>
+        </div>
+        <div id="feed" class="col s6 offset-s3"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
+    </script>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
