@@ -1,0 +1,15 @@
+.one {
+  background: gray;
+  width: 800px;
+  height: 600px;
+}
+.two {
+  background: red;
+  width: 600px;
+  height: 400px;
+}
+.three {
+  background: green;
+  width: 400px;
+  height: 200px;
+}
